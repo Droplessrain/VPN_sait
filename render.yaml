@@ -1,0 +1,14 @@
+# Render Blueprint — Static Site
+# Dashboard: New → Static Site → connect this repo
+# Or: Build Command + Publish Directory below
+
+services:
+  - type: web
+    name: orbit-vpn-landing
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

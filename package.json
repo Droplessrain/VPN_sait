@@ -1,0 +1,13 @@
+{
+  "name": "orbit-vpn-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Orbit VPN marketing landing (static)",
+  "scripts": {
+    "start": "npx --yes serve -l ${PORT:-3000} .",
+    "build": "mkdir -p dist && cp index.html styles.css main.js dist/"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
