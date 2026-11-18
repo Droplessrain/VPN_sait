@@ -392,18 +392,24 @@ a {
   margin: 0;
 }
 
-.privacy {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 1rem 1.25rem 3rem;
+.section p,
+.section li {
   color: var(--muted);
-  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
-.privacy h2 {
-  font-family: var(--display);
-  color: var(--ink);
-  font-size: 1.1rem;
+.section ul {
+  padding-left: 1.25rem;
+  margin: 0 0 1.25rem;
+}
+
+.section h2 {
+  margin-top: 2rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 @media (min-width: 760px) {
