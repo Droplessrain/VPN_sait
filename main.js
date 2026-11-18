@@ -3,7 +3,7 @@ document.getElementById("year").textContent = String(new Date().getFullYear());
 // Optional: set window.ORBIT_APK_URL before load, or edit here when you have a public APK link.
 const apkUrl =
     window.ORBIT_APK_URL ||
-    "https://github.com/Droplessrain/vpn_releases/raw/main/releases/OrbitVPN-1.0.6-client-release.apk";
+    "https://github.com/Droplessrain/vpn_releases/raw/main/releases/OrbitVPN-1.0.7-client-release.apk";
 const apkLink = document.getElementById("apk-link");
 if (apkUrl) {
   apkLink.href = apkUrl;
