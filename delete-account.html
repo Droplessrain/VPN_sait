@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Удаление аккаунта — Orbit VPN</title>
+  <meta name="description" content="Как удалить аккаунт Orbit VPN и связанные данные." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <header class="top">
+    <a class="brand" href="/">Orbit<span>VPN</span></a>
+    <a class="btn btn-sm" href="/">На главную</a>
+  </header>
+
+  <main class="section" style="max-width:42rem">
+    <h1 style="font-family:var(--display);letter-spacing:-.02em">Удаление аккаунта Orbit VPN</h1>
+    <p class="muted">
+      Разработчик / сервис: <strong>Orbit VPN</strong>
+      (<a href="https://orbitvpn.download">orbitvpn.download</a>, приложение Android
+      <code>app.orbitvpn.client</code>). Дата обновления: 18 ноября 2026 г.
+    </p>
+
+    <h2>Как запросить удаление аккаунта и данных</h2>
+    <ol>
+      <li>Откройте приложение <strong>Orbit VPN</strong> на Android.</li>
+      <li>Войдите через Google или Яндекс, если ещё не вошли.</li>
+      <li>Откройте <strong>Настройки</strong>.</li>
+      <li>Выберите <strong>Удалить аккаунт</strong> и подтвердите действие.</li>
+    </ol>
+    <p>
+      Либо напишите на
+      <a href="mailto:orbitvpn@mail.ru?subject=Удаление%20аккаунта%20Orbit%20VPN">orbitvpn@mail.ru</a>
+      с темой «Удаление аккаунта Orbit VPN» и укажите email аккаунта (Google/Яндекс),
+      с которым входили в приложение. Мы обработаем запрос в разумный срок, обычно в течение
+      <strong>30 дней</strong>.
+    </p>
+
+    <h2>Что удаляется</h2>
+    <ul>
+      <li>доступ к VPN и сессии входа;</li>
+      <li>привязка аккаунта к email / идентификаторам Google или Яндекс (email освобождается для нового входа);</li>
+      <li>связанные учётные параметры туннеля на стороне сервиса.</li>
+    </ul>
+
+    <h2>Что может быть сохранено и на какой срок</h2>
+    <ul>
+      <li>
+        В админке сервиса запись пользователя может остаться со статусом «удалён»
+        для учёта злоупотреблений — без возможности входа под этим аккаунтом.
+      </li>
+      <li>
+        Лимиты регистраций / попыток по IP при удалении аккаунта <strong>не сбрасываются</strong>
+        и хранятся столько, сколько нужно для защиты сервиса (как правило, в пределах политики
+        хранения технических логов).
+      </li>
+      <li>
+        Краш-отчёты в Sentry и рекламные данные Yandex Mobile Ads (если показывалась реклама)
+        обрабатываются этими сервисами по их политикам; запрос к нам не удаляет данные напрямую
+        у Google, Яндекса или Sentry — при необходимости удаляйте их в кабинетах этих сервисов.
+      </li>
+      <li>
+        Данные, которые мы обязаны хранить по закону, сохраняются на срок соответствующих требований.
+      </li>
+    </ul>
+
+    <h2>Контакты</h2>
+    <p>
+      Email: <a href="mailto:orbitvpn@mail.ru">orbitvpn@mail.ru</a><br />
+      Политика конфиденциальности:
+      <a href="https://orbitvpn.download/privacy.html">https://orbitvpn.download/privacy.html</a>
+    </p>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-brand">Orbit VPN</div>
+    <p class="foot-copy">© <span id="year"></span> Orbit VPN</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
