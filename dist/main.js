@@ -7,7 +7,8 @@ const apkUrl =
 const apkLink = document.getElementById("apk-link");
 if (apkUrl) {
   apkLink.href = apkUrl;
-  apkLink.textContent = "Скачать APK";
+  const ver = (apkUrl.match(/OrbitVPN-([0-9.]+)/) || [])[1];
+  apkLink.textContent = ver ? `Скачать APK ${ver}` : "Скачать APK";
   apkLink.removeAttribute("aria-disabled");
 }
 
