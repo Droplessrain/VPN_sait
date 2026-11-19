@@ -31,6 +31,57 @@ if ("IntersectionObserver" in window) {
   });
 }
 
+/** Phone demo: Connect → Connected (Riga) */
+(function initPhoneDemo() {
+  const root = document.querySelector("[data-phone-demo]");
+  if (!root) return;
+
+  const btn = root.querySelector("[data-phone-toggle]");
+  const label = root.querySelector("[data-phone-label]");
+  const status = root.querySelector("[data-phone-status]");
+  const badge = root.querySelector("[data-phone-badge]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let on = false;
+  let timer = null;
+  let userTouched = false;
+
+  function setConnected(next) {
+    on = next;
+    root.classList.toggle("is-on", on);
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    label.textContent = on ? "Connected" : "Connect";
+    status.textContent = on ? "Подключено · Рига" : "Нажмите, чтобы подключиться";
+    badge.textContent = on ? "Online" : "Готов";
+  }
+
+  function scheduleAuto() {
+    if (reduceMotion.matches || userTouched) return;
+    clearInterval(timer);
+    timer = setInterval(() => setConnected(!on), 3200);
+  }
+
+  btn.addEventListener("click", () => {
+    userTouched = true;
+    clearInterval(timer);
+    setConnected(!on);
+  });
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) scheduleAuto();
+          else clearInterval(timer);
+        });
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(root);
+  } else {
+    scheduleAuto();
+  }
+})();
+
 /** Interactive map: you (IP geo) → Riga */
 (function initRouteMap() {
   const root = document.querySelector("[data-route-map]");

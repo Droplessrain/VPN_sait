@@ -361,6 +361,437 @@ a {
   text-align: left;
 }
 
+/* —— Download: changelog, install steps, phone demo —— */
+.download-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+.changelog {
+  margin: 1rem 0 0;
+  max-width: 28rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.changelog summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem 0;
+  color: var(--accent);
+  font-weight: 650;
+  font-size: 0.95rem;
+}
+
+.changelog summary::-webkit-details-marker {
+  display: none;
+}
+
+.changelog summary::after {
+  content: "+";
+  float: right;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.changelog[open] summary::after {
+  content: "–";
+}
+
+.changelog ul {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.changelog li {
+  margin: 0.35rem 0;
+}
+
+.install-steps {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.install-steps > li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.9rem;
+  align-items: center;
+  color: var(--ink);
+}
+
+.install-steps strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.install-steps span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.install-shot {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0a1422;
+  min-height: 4.6rem;
+}
+
+.shot-chrome {
+  display: flex;
+  gap: 0.28rem;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.62rem;
+  color: var(--muted);
+}
+
+.shot-chrome-android {
+  display: block;
+  letter-spacing: 0.04em;
+}
+
+.shot-dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: rgba(157, 176, 204, 0.45);
+}
+
+.shot-body {
+  padding: 0.55rem 0.5rem 0.65rem;
+  display: grid;
+  gap: 0.4rem;
+  justify-items: start;
+}
+
+.shot-file {
+  margin: 0;
+  font-size: 0.62rem;
+  color: var(--ink);
+  word-break: break-all;
+}
+
+.shot-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #041018;
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.shot-pill.ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.shot-settings {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.shot-settings p {
+  margin: 0;
+  font-size: 0.62rem;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.shot-toggle {
+  width: 1.55rem;
+  height: 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+.shot-toggle.is-on {
+  background: rgba(125, 255, 168, 0.45);
+}
+
+.shot-toggle.is-on::after {
+  content: "";
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--ok);
+}
+
+.shot-login {
+  grid-template-columns: 1fr 1fr;
+}
+
+.shot-connect-mini {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 0.15rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 40% 35%, #7ad4ff, #2a6fd6 70%);
+  color: #fff;
+  font-size: 0.48rem;
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(94, 200, 255, 0.35);
+}
+
+.phone-demo {
+  justify-self: center;
+}
+
+.phone {
+  width: min(260px, 72vw);
+  border-radius: 2rem;
+  padding: 0.55rem;
+  background: linear-gradient(160deg, #1a2438, #0a101c 55%, #121a2a);
+  border: 1px solid rgba(143, 211, 255, 0.22);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4) inset,
+    0 28px 60px rgba(0, 0, 0, 0.45);
+}
+
+.phone-notch {
+  width: 38%;
+  height: 0.7rem;
+  margin: 0.2rem auto 0.55rem;
+  border-radius: 999px;
+  background: #05080f;
+}
+
+.phone-screen {
+  border-radius: 1.45rem;
+  padding: 1rem 1rem 1.15rem;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(61, 139, 253, 0.28), transparent 55%),
+    linear-gradient(180deg, #0b1524 0%, #071018 100%);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-brand {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.app-brand span {
+  color: var(--accent);
+}
+
+.app-badge {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+}
+
+.phone-demo.is-on .app-badge {
+  color: #041018;
+  background: var(--ok);
+  border-color: transparent;
+}
+
+.app-loc {
+  margin: 1.35rem 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.app-ring {
+  margin: 1.5rem auto 0;
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, rgba(94, 200, 255, 0.12), transparent 65%);
+  box-shadow: 0 0 0 1px rgba(94, 200, 255, 0.18);
+  transition: box-shadow 0.45s ease, background 0.45s ease;
+}
+
+.phone-demo.is-on .app-ring {
+  background: radial-gradient(circle, rgba(125, 255, 168, 0.16), transparent 65%);
+  box-shadow:
+    0 0 0 1px rgba(125, 255, 168, 0.35),
+    0 0 36px rgba(125, 255, 168, 0.2);
+  animation: phone-glow 2.2s ease-in-out infinite;
+}
+
+.app-power {
+  width: 6.6rem;
+  height: 6.6rem;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #fff;
+  background: radial-gradient(circle at 35% 30%, #7ad4ff, #2f6fd4 62%, #1a4a9a);
+  box-shadow: 0 10px 28px rgba(45, 110, 210, 0.45);
+  transition: transform 0.2s ease, background 0.35s ease;
+}
+
+.app-power:hover {
+  transform: scale(1.03);
+}
+
+.phone-demo.is-on .app-power {
+  background: radial-gradient(circle at 35% 30%, #b6ffd2, #3ecf7a 62%, #1f8a4c);
+  box-shadow: 0 10px 28px rgba(60, 200, 120, 0.4);
+}
+
+.app-status {
+  margin: 1.15rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  min-height: 1.35em;
+}
+
+.phone-demo.is-on .app-status {
+  color: var(--ok);
+}
+
+.app-meta {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+}
+
+.app-meta span {
+  color: var(--muted);
+}
+
+.app-meta strong {
+  justify-self: end;
+  font-weight: 650;
+}
+
+.phone-hint {
+  margin: 0.85rem 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  max-width: 22rem;
+}
+
+@keyframes phone-glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.08); }
+}
+
+.faq-list {
+  display: grid;
+  gap: 0;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.05rem 0;
+  font-weight: 650;
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+.faq-item p {
+  margin: 0 0 1.1rem;
+  max-width: 42rem;
+}
+
+.faq-item a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+@media (min-width: 900px) {
+  .download-layout {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+    gap: 2.5rem;
+  }
+
+  .phone-demo {
+    position: sticky;
+    top: 5.5rem;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 560px) {
+  .install-steps > li {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .install-shot {
+    max-width: 11rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-demo.is-on .app-ring {
+    animation: none;
+  }
+}
+
 .about-seo p {
   color: var(--muted);
   max-width: 46rem;

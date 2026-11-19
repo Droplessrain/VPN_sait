@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=122" />
+  <link rel="stylesheet" href="styles.css?v=123" />
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -23,6 +23,7 @@
       <a href="#features">Возможности</a>
       <a href="#devices">Устройства</a>
       <a href="#pricing">Тарифы</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-sm" href="#download">Скачать</a>
   </header>
@@ -252,20 +253,149 @@
       </ul>
     </section>
 
-    <section id="download" class="section cta-block">
-      <h2>Orbit VPN на Android</h2>
-      <p class="section-lead">
-        Скачайте release-сборку и войдите через Google или Яндекс.
-        Актуальная версия: <strong>1.0.23</strong>.
-      </p>
-      <div class="hero-cta">
-        <a class="btn" id="apk-link" href="https://raw.githubusercontent.com/Droplessrain/vpn_releases/main/releases/OrbitVPN-1.0.23-client-release.apk">Скачать APK 1.0.23</a>
-        <a class="btn btn-ghost" href="mailto:orbitvpn@mail.ru">Написать нам</a>
+    <section id="download" class="section cta-block download-section">
+      <div class="download-layout">
+        <div class="download-copy">
+          <h2>Orbit VPN на Android</h2>
+          <p class="section-lead">
+            Скачайте release-сборку и войдите через Google или Яндекс.
+            Актуальная версия: <strong>1.0.23</strong>.
+          </p>
+          <div class="hero-cta">
+            <a class="btn" id="apk-link" href="https://raw.githubusercontent.com/Droplessrain/vpn_releases/main/releases/OrbitVPN-1.0.23-client-release.apk">Скачать APK 1.0.23</a>
+            <a class="btn btn-ghost" href="mailto:orbitvpn@mail.ru">Написать нам</a>
+          </div>
+
+          <details class="changelog">
+            <summary>1.0.23 — что нового</summary>
+            <ul>
+              <li>Вход через Google и Яндекс</li>
+              <li>Стабильнее подключение к ноде в Риге</li>
+              <li>Правки под свежие версии Android</li>
+              <li>Подготовка к публикации в Google Play</li>
+            </ul>
+          </details>
+
+          <p class="hero-note">APK не из Store — ниже три шага, как поставить за минуту.</p>
+
+          <ol class="install-steps">
+            <li>
+              <div class="install-shot" aria-hidden="true">
+                <div class="shot-chrome">
+                  <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+                </div>
+                <div class="shot-body shot-download">
+                  <p class="shot-file">OrbitVPN-1.0.23.apk</p>
+                  <span class="shot-pill">Скачать</span>
+                </div>
+              </div>
+              <div>
+                <strong>1. Скачайте APK</strong>
+                <span>Кнопка выше — файл откроется в браузере телефона.</span>
+              </div>
+            </li>
+            <li>
+              <div class="install-shot" aria-hidden="true">
+                <div class="shot-chrome shot-chrome-android">Настройки</div>
+                <div class="shot-body shot-settings">
+                  <p>Установка неизвестных приложений</p>
+                  <span class="shot-toggle is-on"></span>
+                </div>
+              </div>
+              <div>
+                <strong>2. Разрешите установку</strong>
+                <span>Для этого браузера включите «неизвестные приложения».</span>
+              </div>
+            </li>
+            <li>
+              <div class="install-shot" aria-hidden="true">
+                <div class="shot-chrome shot-chrome-android">Orbit VPN</div>
+                <div class="shot-body shot-login">
+                  <span class="shot-pill ghost">Google</span>
+                  <span class="shot-pill ghost">Яндекс</span>
+                  <span class="shot-connect-mini">Connect</span>
+                </div>
+              </div>
+              <div>
+                <strong>3. Войдите и Connect</strong>
+                <span>OAuth → выбор Риги → подключение в один тап.</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="phone-demo" data-phone-demo aria-label="Демо экрана Orbit VPN">
+          <div class="phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <header class="app-top">
+                <span class="app-brand">Orbit<span>VPN</span></span>
+                <span class="app-badge" data-phone-badge>Готов</span>
+              </header>
+              <p class="app-loc">Рига · Латвия · ЕС</p>
+              <div class="app-ring" data-phone-ring>
+                <button type="button" class="app-power" data-phone-toggle aria-pressed="false">
+                  <span data-phone-label>Connect</span>
+                </button>
+              </div>
+              <p class="app-status" data-phone-status>Нажмите, чтобы подключиться</p>
+              <div class="app-meta">
+                <span>Протокол</span><strong>VLESS</strong>
+                <span>Выход</span><strong>EU</strong>
+              </div>
+            </div>
+          </div>
+          <p class="phone-hint">Макет интерфейса — так выглядит подключение к Риге</p>
+        </aside>
       </div>
-      <p class="hero-note">Для установки разрешите APK из этого источника в настройках Android.</p>
     </section>
 
-    <section id="contact" class="section section-alt about-seo">
+    <section id="faq" class="section section-alt">
+      <h2>Частые вопросы</h2>
+      <p class="section-lead">Коротко и по делу — без мелкого шрифта.</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Вы логируете мой трафик?</summary>
+          <p>
+            Нет, продукт не строится на просмотре содержимого. Нужны данные аккаунта (email / OAuth),
+            сессия и служебные сведения для выдачи доступа. Подробности — в
+            <a href="/privacy.html">политике конфиденциальности</a>.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Почему только одна страна — Рига?</summary>
+          <p>
+            Сейчас фокус на качестве одной ноды в ЕС, а не на длинном списке флагов.
+            Новые регионы появятся, когда аудитория и инфраструктура вырастут.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Будет ли реклама?</summary>
+          <p>
+            На early access функционал бесплатный. На free после пробного периода возможна реклама
+            через Yandex Mobile Ads. В будущем Orbit Plus — без рекламы.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Как удалить аккаунт?</summary>
+          <p>
+            В приложении: Настройки → удаление аккаунта, либо напишите на
+            <a href="mailto:orbitvpn@mail.ru">orbitvpn@mail.ru</a>.
+            Также есть страница
+            <a href="/delete-account.html">delete-account</a>.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Безопасно ли ставить APK не из Google Play?</summary>
+          <p>
+            Да, если качаете с нашего сайта / официальной ссылки выше. Android спросит разрешение
+            на установку из браузера — это нормально для early access до публикации в Store.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="section about-seo">
       <h2>Коротко о сервисе</h2>
       <p>
         Orbit VPN — сервис защищённого интернет-соединения с инфраструктурой в Риге.
@@ -305,6 +435,6 @@
       <a href="https://orbitvpn.download/privacy.html">https://orbitvpn.download/privacy.html</a>.</p>
   </section>
 
-  <script src="main.js?v=122"></script>
+  <script src="main.js?v=123"></script>
 </body>
 </html>
