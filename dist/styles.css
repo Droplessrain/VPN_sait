@@ -449,6 +449,164 @@ a {
   transform: none;
 }
 
+/* —— You → Riga route map —— */
+.route-section {
+  padding-bottom: 1rem;
+}
+
+.route-stage {
+  margin-top: 1.5rem;
+}
+
+.route-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 55% 45%, rgba(20, 48, 88, 0.55), transparent 70%),
+    linear-gradient(165deg, #071018 0%, #0a1828 45%, #06101a 100%);
+  overflow: visible;
+}
+
+.route-sea {
+  fill: transparent;
+}
+
+.route-land {
+  fill: rgba(94, 200, 255, 0.07);
+  stroke: rgba(143, 211, 255, 0.22);
+  stroke-width: 1.25;
+}
+
+.route-grid line {
+  stroke: rgba(143, 211, 255, 0.08);
+  stroke-width: 1;
+}
+
+.route-path {
+  stroke: url(#routeArc);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 8 10;
+  animation: route-dash 1.4s linear infinite;
+}
+
+.route-path-glow {
+  stroke: rgba(94, 200, 255, 0.35);
+  stroke-width: 8;
+  stroke-linecap: round;
+  filter: blur(2px);
+}
+
+.route-dot {
+  fill: var(--accent);
+  stroke: #e8f1ff;
+  stroke-width: 2;
+}
+
+.route-dot.riga {
+  fill: var(--ok);
+}
+
+.route-label {
+  fill: var(--ink);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.route-label.riga {
+  fill: var(--ok);
+}
+
+.route-pulse {
+  transform-origin: center;
+  animation: route-pulse 2.4s ease-out infinite;
+}
+
+.route-meta {
+  margin-top: 1.15rem;
+}
+
+.route-status {
+  margin: 0 0 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.route-status.is-ready {
+  color: var(--ok);
+}
+
+.route-status.is-fallback {
+  color: #ffd48a;
+}
+
+.route-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 1.25rem;
+  margin: 0;
+}
+
+.route-stats dt {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.route-stats dd {
+  margin: 0.2rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.route-note {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+@keyframes route-dash {
+  to { stroke-dashoffset: -36; }
+}
+
+@keyframes route-pulse {
+  0% { opacity: 0.7; transform: scale(0.7); }
+  70% { opacity: 0; transform: scale(1.35); }
+  100% { opacity: 0; transform: scale(1.35); }
+}
+
+@media (min-width: 760px) {
+  .route-stage {
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr;
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .route-meta {
+    margin-top: 0;
+  }
+
+  .route-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-path,
+  .route-pulse {
+    animation: none;
+  }
+}
+
 /* —— Riga horizontal scroll story (mobile) —— */
 .riga-story-mobile {
   display: none;

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=121" />
+  <link rel="stylesheet" href="styles.css?v=122" />
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -19,6 +19,7 @@
     <a class="brand" href="#top">Orbit<span>VPN</span></a>
     <nav class="nav">
       <a href="#why">Зачем</a>
+      <a href="#route">Маршрут</a>
       <a href="#features">Возможности</a>
       <a href="#devices">Устройства</a>
       <a href="#pricing">Тарифы</a>
@@ -99,6 +100,70 @@
               <span class="is-active"></span><span></span><span></span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="route" class="section route-section" data-route-map>
+      <h2>Ты → Рига</h2>
+      <p class="section-lead">
+        Примерный маршрут до ноды Orbit по вашему IP. Это не GPS — город и страна оцениваются приблизительно.
+      </p>
+      <div class="route-stage">
+        <svg class="route-map" viewBox="0 0 900 520" role="img" aria-label="Карта маршрута до Риги">
+          <defs>
+            <radialGradient id="routeGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#5ec8ff" stop-opacity="0.55" />
+              <stop offset="100%" stop-color="#5ec8ff" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="routeArc" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#3d8bfd" />
+              <stop offset="100%" stop-color="#7dffa8" />
+            </linearGradient>
+            <filter id="softBlur" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="8" />
+            </filter>
+          </defs>
+          <rect class="route-sea" x="0" y="0" width="900" height="520" rx="0" />
+          <!-- stylized Europe / western Russia landmass -->
+          <path class="route-land" d="M165 118 C210 92 268 86 320 98 C372 88 420 78 468 92 C520 84 575 96 620 120 C668 110 720 128 758 168 C790 210 802 268 788 320 C770 372 728 410 678 428 C630 448 572 452 522 438 C470 452 412 448 362 428 C310 442 252 430 210 398 C168 360 148 300 152 242 C148 198 150 152 165 118 Z" />
+          <g class="route-grid" aria-hidden="true"></g>
+          <path class="route-path-glow" data-route-path-glow d="" fill="none" />
+          <path class="route-path" data-route-path d="" fill="none" />
+          <g data-route-you opacity="0">
+            <circle class="route-pulse" r="28" fill="url(#routeGlow)" filter="url(#softBlur)" />
+            <circle r="7" class="route-dot you" />
+            <text class="route-label" dy="-16" text-anchor="middle">Вы</text>
+          </g>
+          <g data-route-riga>
+            <circle class="route-pulse" r="28" fill="url(#routeGlow)" filter="url(#softBlur)" />
+            <circle r="8" class="route-dot riga" />
+            <text class="route-label riga" dy="-16" text-anchor="middle">Рига</text>
+          </g>
+        </svg>
+        <div class="route-meta">
+          <p class="route-status" data-route-status>Определяем ваш регион…</p>
+          <dl class="route-stats">
+            <div>
+              <dt>Откуда</dt>
+              <dd data-route-from>—</dd>
+            </div>
+            <div>
+              <dt>Куда</dt>
+              <dd>Рига, Латвия (ЕС)</dd>
+            </div>
+            <div>
+              <dt>~расстояние</dt>
+              <dd data-route-km>—</dd>
+            </div>
+            <div>
+              <dt>~задержка</dt>
+              <dd data-route-rtt>—</dd>
+            </div>
+          </dl>
+          <p class="route-note">
+            Геолокация по IP идёт напрямую с вашего устройства к публичному сервису; Orbit её не сохраняет.
+          </p>
         </div>
       </div>
     </section>
@@ -240,6 +305,6 @@
       <a href="https://orbitvpn.download/privacy.html">https://orbitvpn.download/privacy.html</a>.</p>
   </section>
 
-  <script src="main.js?v=121"></script>
+  <script src="main.js?v=122"></script>
 </body>
 </html>
