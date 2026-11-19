@@ -449,6 +449,119 @@ a {
   transform: none;
 }
 
+/* —— Riga horizontal scroll story (mobile) —— */
+.riga-story-mobile {
+  display: none;
+}
+
+.riga-story-desktop {
+  display: block;
+}
+
+@media (max-width: 759px) {
+  .riga-story-desktop {
+    display: none;
+  }
+
+  .riga-story-mobile {
+    display: block;
+  }
+
+  .riga-pin {
+    height: 300vh;
+    position: relative;
+  }
+
+  .riga-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background: #061018;
+  }
+
+  .riga-track {
+    display: flex;
+    height: 100%;
+    width: 300%;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .riga-panel {
+    flex: 0 0 33.3333%;
+    width: 33.3333%;
+    height: 100%;
+    position: relative;
+    background-color: #0a1624;
+    background-image: var(--riga-img);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .riga-scrim {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem 1.35rem calc(2.75rem + env(safe-area-inset-bottom, 0px));
+    background:
+      linear-gradient(180deg, rgba(4, 10, 18, 0.25) 0%, rgba(4, 10, 18, 0.2) 35%, rgba(4, 10, 18, 0.82) 100%);
+  }
+
+  .riga-kicker {
+    margin: 0 0 0.45rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8e6ff;
+    font-weight: 650;
+  }
+
+  .riga-scrim h2 {
+    font-family: var(--display);
+    font-size: clamp(1.75rem, 7vw, 2.35rem);
+    letter-spacing: -0.03em;
+    margin: 0 0 0.55rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .riga-scrim p:not(.riga-kicker) {
+    margin: 0;
+    max-width: 28ch;
+    color: rgba(232, 241, 255, 0.9);
+    font-size: 1.02rem;
+    line-height: 1.45;
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .riga-dots {
+    position: absolute;
+    left: 50%;
+    bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.45rem;
+    z-index: 2;
+  }
+
+  .riga-dots span {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    transition: width 0.25s ease, background 0.25s ease;
+  }
+
+  .riga-dots span.is-active {
+    width: 1.15rem;
+    background: #5ec8ff;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sky,
   .hero,
@@ -457,5 +570,33 @@ a {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  @media (max-width: 759px) {
+    .riga-pin {
+      height: auto;
+    }
+
+    .riga-sticky {
+      position: relative;
+      height: auto;
+    }
+
+    .riga-track {
+      width: 100%;
+      flex-direction: column;
+      transform: none !important;
+    }
+
+    .riga-panel {
+      flex: none;
+      width: 100%;
+      min-height: 85vh;
+      min-height: 85dvh;
+    }
+
+    .riga-dots {
+      display: none;
+    }
   }
 }

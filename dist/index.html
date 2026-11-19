@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=121" />
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -41,29 +41,66 @@
       <p class="hero-note">Сейчас — ранний доступ для Android. Без подписки на старте.</p>
     </section>
 
-    <section id="why" class="section">
-      <h2>Кому нужен Orbit</h2>
-      <p class="section-lead">
-        Тем, кому важен стабильный выход в ЕС и собственная приватность.
-      </p>
-      <ul class="audience">
-        <li>
-          <strong>Балтия и соседи</strong>
-          <span>Низкая задержка до ноды в Риге — удобно для работы и учёбы.</span>
-        </li>
-        <li>
-          <strong>Удалёнка и фриланс</strong>
-          <span>Доступ к сервисам и кабинетам с европейским выходом.</span>
-        </li>
-        <li>
-          <strong>Публичный Wi‑Fi</strong>
-          <span>Кафе, отели, аэропорты — трафик в шифрованном туннеле.</span>
-        </li>
-        <li>
-          <strong>Небольшие команды</strong>
-          <span>Общий понятный канал для 3–15 человек, без enterprise-сложности.</span>
-        </li>
-      </ul>
+    <section id="why" class="riga-story" aria-label="Кому нужен Orbit — Почувствуй себя в Риге">
+      <!-- Desktop / tablet: classic list -->
+      <div class="section riga-story-desktop">
+        <h2>Кому нужен Orbit</h2>
+        <p class="section-lead">
+          Тем, кому важен стабильный выход в ЕС и собственная приватность.
+        </p>
+        <ul class="audience">
+          <li>
+            <strong>Балтия и соседи</strong>
+            <span>Низкая задержка до ноды в Риге — удобно для работы и учёбы.</span>
+          </li>
+          <li>
+            <strong>Удалёнка и фриланс</strong>
+            <span>Доступ к сервисам и кабинетам с европейским выходом.</span>
+          </li>
+          <li>
+            <strong>Публичный Wi‑Fi</strong>
+            <span>Кафе, отели, аэропорты — трафик в шифрованном туннеле.</span>
+          </li>
+          <li>
+            <strong>Небольшие команды</strong>
+            <span>Общий понятный канал для 3–15 человек, без enterprise-сложности.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile: vertical scroll drives horizontal Riga panels -->
+      <div class="riga-story-mobile" data-riga-scroll>
+        <div class="riga-pin">
+          <div class="riga-sticky">
+            <div class="riga-track">
+              <article class="riga-panel" style="--riga-img: url('images/riga/riga-1.jpg')">
+                <div class="riga-scrim">
+                  <p class="riga-kicker">Почувствуй себя в Риге</p>
+                  <h2>Кому нужен Orbit</h2>
+                  <p>Стабильный выход в ЕС — будто смотришь на Даугаву с башни Святого Петра.</p>
+                </div>
+              </article>
+              <article class="riga-panel" style="--riga-img: url('images/riga/riga-2.jpg')">
+                <div class="riga-scrim">
+                  <p class="riga-kicker">Вечер в Старом городе</p>
+                  <h2>Удалёнка и учёба</h2>
+                  <p>Европейский IP для кабинетов и сервисов — без лишней сложности.</p>
+                </div>
+              </article>
+              <article class="riga-panel" style="--riga-img: url('images/riga/riga-3.jpg')">
+                <div class="riga-scrim">
+                  <p class="riga-kicker">Зимний свет Балтии</p>
+                  <h2>Публичный Wi‑Fi</h2>
+                  <p>Кафе, отели, аэропорты — трафик в шифрованном туннеле до Риги.</p>
+                </div>
+              </article>
+            </div>
+            <div class="riga-dots" aria-hidden="true">
+              <span class="is-active"></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="features" class="section section-alt">
@@ -154,7 +191,7 @@
       <h2>Orbit VPN на Android</h2>
       <p class="section-lead">
         Скачайте release-сборку и войдите через Google или Яндекс.
-        Актуальная версия: <strong>1.0.12</strong>.
+        Актуальная версия: <strong>1.0.23</strong>.
       </p>
       <div class="hero-cta">
         <a class="btn" id="apk-link" href="https://raw.githubusercontent.com/Droplessrain/vpn_releases/main/releases/OrbitVPN-1.0.23-client-release.apk">Скачать APK 1.0.23</a>
@@ -203,6 +240,6 @@
       <a href="https://orbitvpn.download/privacy.html">https://orbitvpn.download/privacy.html</a>.</p>
   </section>
 
-  <script src="main.js?v=120"></script>
+  <script src="main.js?v=121"></script>
 </body>
 </html>

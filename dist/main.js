@@ -30,3 +30,52 @@ if ("IntersectionObserver" in window) {
     io.observe(el);
   });
 }
+
+/** Mobile: vertical scroll → horizontal Riga panels */
+(function initRigaScroll() {
+  const root = document.querySelector("[data-riga-scroll]");
+  if (!root) return;
+
+  const pin = root.querySelector(".riga-pin");
+  const track = root.querySelector(".riga-track");
+  const dots = root.querySelectorAll(".riga-dots span");
+  if (!pin || !track) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileMq = window.matchMedia("(max-width: 759px)");
+  let ticking = false;
+  let lastIndex = 0;
+
+  function progress() {
+    if (!mobileMq.matches || reduceMotion.matches) {
+      track.style.transform = "";
+      return;
+    }
+    const rect = pin.getBoundingClientRect();
+    const scrollable = pin.offsetHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    const raw = Math.min(1, Math.max(0, -rect.top / scrollable));
+    const x = raw * (track.children.length - 1);
+    track.style.transform = `translate3d(${-x * 100}vw, 0, 0)`;
+
+    const idx = Math.min(dots.length - 1, Math.round(raw * (dots.length - 1)));
+    if (idx !== lastIndex) {
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
+      lastIndex = idx;
+    }
+  }
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      progress();
+      ticking = false;
+    });
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  mobileMq.addEventListener("change", onScroll);
+  progress();
+})();
