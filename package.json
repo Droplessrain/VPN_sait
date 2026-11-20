@@ -5,7 +5,7 @@
   "description": "Orbit VPN marketing landing (static)",
   "scripts": {
     "start": "npx --yes serve -l ${PORT:-3000} .",
-    "build": "mkdir -p dist/images/riga && cp index.html privacy.html terms.html delete-account.html styles.css main.js _headers dist/ && cp -r images/riga/. dist/images/riga/"
+    "build": "mkdir -p dist/images/riga dist/images/guide && cp index.html privacy.html terms.html delete-account.html styles.css main.js _headers dist/ && cp -r images/riga/. dist/images/riga/ && cp -r images/guide/. dist/images/guide/"
   },
   "engines": {
     "node": ">=18"
