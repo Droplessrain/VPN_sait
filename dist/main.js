@@ -300,8 +300,11 @@ if ("IntersectionObserver" in window) {
     const raw = Math.min(1, Math.max(0, -rect.top / scrollable));
     const panels = track.children.length || 1;
     const x = raw * (panels - 1);
-    // Percent of the track (not 100vw): avoids mobile horizontal page overflow.
-    track.style.transform = `translate3d(${(-x * 100) / panels}%, 0, 0)`;
+    // Use measured panel width (not 100vw) so sticky width matches and page doesn't overflow.
+    const panelW = track.children[0]
+      ? track.children[0].getBoundingClientRect().width
+      : pin.clientWidth;
+    track.style.transform = `translate3d(${-x * panelW}px, 0, 0)`;
 
     const idx = Math.min(dots.length - 1, Math.round(raw * (dots.length - 1)));
     if (idx !== lastIndex) {

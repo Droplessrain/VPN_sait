@@ -22,7 +22,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
 }
 
 body {
@@ -31,8 +30,7 @@ body {
   color: var(--ink);
   background: var(--bg);
   line-height: 1.55;
-  overflow-x: clip;
-  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -1175,9 +1173,9 @@ a {
   }
 
   .riga-pin {
+    /* Do NOT set overflow here — it breaks position:sticky on .riga-sticky. */
     height: 300vh;
     position: relative;
-    overflow: hidden;
     width: 100%;
     max-width: 100%;
   }
