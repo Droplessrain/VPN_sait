@@ -298,8 +298,10 @@ if ("IntersectionObserver" in window) {
     const scrollable = pin.offsetHeight - window.innerHeight;
     if (scrollable <= 0) return;
     const raw = Math.min(1, Math.max(0, -rect.top / scrollable));
-    const x = raw * (track.children.length - 1);
-    track.style.transform = `translate3d(${-x * 100}vw, 0, 0)`;
+    const panels = track.children.length || 1;
+    const x = raw * (panels - 1);
+    // Percent of the track (not 100vw): avoids mobile horizontal page overflow.
+    track.style.transform = `translate3d(${(-x * 100) / panels}%, 0, 0)`;
 
     const idx = Math.min(dots.length - 1, Math.round(raw * (dots.length - 1)));
     if (idx !== lastIndex) {
