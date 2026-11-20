@@ -31,15 +31,26 @@ if ("IntersectionObserver" in window) {
   });
 }
 
-/** Phone demo: Connect → Connected (Riga) */
+/** Phone demo: real screenshots Connect ↔ Connected */
 (function initPhoneDemo() {
   const root = document.querySelector("[data-phone-demo]");
   if (!root) return;
 
   const btn = root.querySelector("[data-phone-toggle]");
-  const label = root.querySelector("[data-phone-label]");
-  const status = root.querySelector("[data-phone-status]");
-  const badge = root.querySelector("[data-phone-badge]");
+  const img = root.querySelector("[data-phone-screen]");
+  const hint = root.querySelector("[data-phone-hint]");
+  if (!btn || !img) return;
+
+  const shots = {
+    off: {
+      src: "images/guide/03-home.jpg",
+      alt: "Orbit VPN: выбор Latvia и кнопка Connect",
+    },
+    on: {
+      src: "images/guide/04-connected.jpg",
+      alt: "Orbit VPN подключён: статус Connected",
+    },
+  };
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let on = false;
   let timer = null;
@@ -49,15 +60,20 @@ if ("IntersectionObserver" in window) {
     on = next;
     root.classList.toggle("is-on", on);
     btn.setAttribute("aria-pressed", on ? "true" : "false");
-    label.textContent = on ? "Connected" : "Connect";
-    status.textContent = on ? "Подключено · Рига" : "Нажмите, чтобы подключиться";
-    badge.textContent = on ? "Online" : "Готов";
+    const shot = on ? shots.on : shots.off;
+    img.src = shot.src;
+    img.alt = shot.alt;
+    if (hint) {
+      hint.textContent = on
+        ? "Connected · Latvia — нажмите, чтобы отключить"
+        : "Нажмите на экран: Connect → Connected";
+    }
   }
 
   function scheduleAuto() {
     if (reduceMotion.matches || userTouched) return;
     clearInterval(timer);
-    timer = setInterval(() => setConnected(!on), 3200);
+    timer = setInterval(() => setConnected(!on), 3400);
   }
 
   btn.addEventListener("click", () => {
