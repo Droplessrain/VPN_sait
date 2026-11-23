@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=126" />
+  <link rel="stylesheet" href="styles.css?v=127" />
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -41,7 +41,7 @@
         <a class="btn btn-ghost" href="#features">Как это работает</a>
         <a class="btn btn-ghost" href="#route">Где я по IP</a>
       </div>
-      <p class="hero-note">Сейчас — ранний доступ для Android. Без подписки на старте.</p>
+      <p class="hero-note">Android · Free с лимитом сессии и рекламой · Premium — без лимитов и ads</p>
     </section>
 
     <section id="why" class="riga-story" aria-label="Кому нужен Orbit — Почувствуй себя в Риге">
@@ -217,40 +217,44 @@
 
     <section id="pricing" class="section section-alt">
       <h2>Тарифы</h2>
-      <p class="section-lead">На этапе запуска полный функционал доступен бесплатно. Платные планы появятся позже — без сюрпризов в мелком шрифте.</p>
+      <p class="section-lead">
+        Два режима без мелкого шрифта: Free — с рекламой и лимитом времени сессии;
+        Premium — без ads и без лимита. Цена Premium показывается в Google Play при оформлении.
+      </p>
       <div class="plans">
-        <article class="plan plan-featured">
+        <article class="plan">
           <p class="plan-tag">Сейчас</p>
-          <h3>Early Access</h3>
+          <h3>Free</h3>
           <p class="plan-price">0&nbsp;€</p>
-          <p class="plan-period">на старте</p>
+          <p class="plan-period">с ограничениями</p>
           <ul>
             <li>Android-приложение</li>
             <li>Выход через Ригу / ЕС</li>
             <li>Аккаунт и каталог</li>
-            <li>Реклама на free после пробного периода</li>
+            <li>Лимит времени сессии</li>
+            <li>Реклама (Yandex Mobile Ads)</li>
           </ul>
-          <a class="btn" href="#download">Скачать APK</a>
+          <a class="btn btn-ghost" href="#download">Скачать</a>
         </article>
-        <article class="plan">
-          <p class="plan-tag">Скоро</p>
-          <h3>Orbit Plus</h3>
-          <p class="plan-price">—</p>
-          <p class="plan-period">подписка</p>
+        <article class="plan plan-featured">
+          <p class="plan-tag">В приложении</p>
+          <h3>Premium</h3>
+          <p class="plan-price">Play</p>
+          <p class="plan-period">подписка · отмена в Google Play</p>
           <ul>
-            <li>Без рекламы и лимитов</li>
+            <li>Без рекламы</li>
+            <li>Без лимита сессии</li>
             <li>Приоритет на нодах</li>
-            <li>Дольше поддержка</li>
-            <li>Командные пакеты</li>
+            <li>Все локации из каталога</li>
           </ul>
-          <a class="btn btn-ghost" href="#contact">Сообщить о интересе</a>
+          <a class="btn" href="#download">Открыть Premium</a>
         </article>
       </div>
       <ul class="perks">
         <li>Выход в ЕС (Латвия)</li>
-        <li>Безлимитный трафик на старте</li>
+        <li>Трафик не режем по гигабайтам</li>
+        <li>На Free ограниченно время сессии</li>
         <li>Поддержка по почте</li>
-        <li>Обновления приложения</li>
       </ul>
     </section>
 
@@ -259,26 +263,29 @@
         <div class="download-copy">
           <h2>Orbit VPN на Android</h2>
           <p class="section-lead">
-            Скачайте release-сборку и войдите через Google или Яндекс.
-            Актуальная версия: <strong>1.0.33</strong>.
+            Установите из Google Play и войдите через Google или Яндекс.
+            Актуальная версия: <strong>1.0.40</strong>.
           </p>
           <div class="hero-cta">
-            <a class="btn" id="apk-link" href="https://raw.githubusercontent.com/Droplessrain/vpn_releases/main/releases/OrbitVPN-1.0.33-client-release.apk">Скачать APK 1.0.33</a>
+            <a class="btn" id="play-link" href="https://play.google.com/store/apps/details?id=app.orbitvpn.client">Google Play</a>
             <a class="btn btn-ghost" href="mailto:orbitvpn@mail.ru">Написать нам</a>
           </div>
 
           <details class="changelog">
-            <summary>1.0.33 — что нового</summary>
+            <summary>1.0.40 — что нового</summary>
             <ul>
-              <li>Logout останавливает VPN и чистит sticky-конфиг</li>
-              <li>Allowlist для force-update URL (Play / orbitvpn.download)</li>
-              <li>Надёжнее Connect при гонке с Xray reload</li>
-              <li>Каталог сбрасывается при логине, чтобы не оставался старый UUID</li>
+              <li>Блокировка IPv6-утечек при Connected</li>
+              <li>Проверка выходного IP на главном экране</li>
+              <li>Kill switch: блок трафика при обрыве VPN</li>
+              <li>Premium и Free с рекламой / лимитом сессии — как в тарифах выше</li>
             </ul>
           </details>
 
           <p class="hero-note">
-            APK не из Store: скачайте файл выше, разрешите установку неизвестных приложений для браузера, затем откройте Orbit VPN.
+            Основной канал — Google Play (в том числе закрытое тестирование).
+            APK для ручной установки:
+            <a id="apk-link" href="https://raw.githubusercontent.com/Droplessrain/vpn_releases/main/releases/OrbitVPN-1.0.33-client-release.apk">скачать APK</a>
+            (для тестировщиков; разрешите установку из браузера).
           </p>
         </div>
 
@@ -325,7 +332,7 @@
             <img src="images/guide/04-connected.jpg" width="460" height="1024" alt="Orbit VPN подключён: статус Connected и кнопка Disconnect" loading="lazy" />
           </figure>
           <strong>4. Готово</strong>
-          <span>Статус Connected — трафик идёт через сервер. Disconnect, когда нужно отключить.</span>
+          <span>Статус Connected — нажмите «Проверить IP»: должен быть выход LV/Рига. Disconnect, когда нужно отключить.</span>
         </li>
       </ol>
     </section>
@@ -352,8 +359,15 @@
         <details class="faq-item">
           <summary>Будет ли реклама?</summary>
           <p>
-            На early access функционал бесплатный. На free после пробного периода возможна реклама
-            через Yandex Mobile Ads. В будущем Orbit Plus — без рекламы.
+            На тарифе Free после пробного периода показывается реклама (Yandex Mobile Ads)
+            и действует лимит времени сессии. Premium в приложении убирает рекламу и лимит.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Что даёт Premium?</summary>
+          <p>
+            Без рекламы, без лимита сессии, приоритет на нодах. Оформляется подпиской в Google Play
+            из экрана Premium в приложении; отмена — в подписках Google Play.
           </p>
         </details>
         <details class="faq-item">
@@ -366,10 +380,11 @@
           </p>
         </details>
         <details class="faq-item">
-          <summary>Безопасно ли ставить APK не из Google Play?</summary>
+          <summary>Откуда ставить приложение?</summary>
           <p>
-            Да, если качаете с нашего сайта / официальной ссылки выше. Android спросит разрешение
-            на установку из браузера — это нормально для early access до публикации в Store.
+            Предпочтительно из <a href="https://play.google.com/store/apps/details?id=app.orbitvpn.client">Google Play</a>
+            (в том числе закрытое тестирование). APK с сайта — запасной вариант для тестировщиков;
+            Android спросит разрешение на установку из браузера.
           </p>
         </details>
       </div>
@@ -383,9 +398,8 @@
         а не на искусственно раздутом списке стран.
       </p>
       <p>
-        Когда появятся платные тарифы, вы сможете выбрать срок подписки:
-        чем дольше период, тем ниже цена за день — как у привычных VPN-сервисов.
-        До этого момента early access остаётся бесплатным.
+        Free доступен с ограничениями (реклама и лимит сессии). Premium — подписка через Google Play
+        без ads и без лимита. Актуальные условия всегда в приложении и на этой странице.
       </p>
     </section>
   </main>
@@ -405,7 +419,7 @@
     <p class="muted">Кратко. Полный текст: <a href="/privacy.html">orbitvpn.download/privacy.html</a>. Дата: 18 ноября 2026.</p>
     <p>
       Orbit VPN обрабатывает данные аккаунта (email / OAuth), токен сессии, служебные данные VPN-доступа.
-      На free после пробного периода — рекламный идентификатор через Yandex Mobile Ads.
+      На тарифе Free — рекламный идентификатор через Yandex Mobile Ads; Premium отключает рекламу.
     </p>
     <p>
       Удаление аккаунта: в приложении (Настройки) или <a href="mailto:orbitvpn@mail.ru">orbitvpn@mail.ru</a>.
@@ -415,6 +429,6 @@
       <a href="https://orbitvpn.download/privacy.html">https://orbitvpn.download/privacy.html</a>.</p>
   </section>
 
-  <script src="main.js?v=126"></script>
+  <script src="main.js?v=127"></script>
 </body>
 </html>

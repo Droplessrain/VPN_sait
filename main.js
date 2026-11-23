@@ -1,15 +1,15 @@
 document.getElementById("year").textContent = String(new Date().getFullYear());
 
-// Optional: set window.ORBIT_APK_URL before load, or edit here when you have a public APK link.
+// Sideload APK for testers only. Primary CTA is #play-link (Google Play) — do not override it.
+// Optional: window.ORBIT_APK_URL = "https://…/OrbitVPN-x.y.z-client-release.apk"
 const apkUrl =
     window.ORBIT_APK_URL ||
     "https://raw.githubusercontent.com/Droplessrain/vpn_releases/main/releases/OrbitVPN-1.0.33-client-release.apk";
 const apkLink = document.getElementById("apk-link");
-if (apkUrl) {
+if (apkLink && apkUrl) {
   apkLink.href = apkUrl;
   const ver = (apkUrl.match(/OrbitVPN-([0-9.]+)/) || [])[1];
-  apkLink.textContent = ver ? `Скачать APK ${ver}` : "Скачать APK";
-  apkLink.removeAttribute("aria-disabled");
+  apkLink.textContent = ver ? `скачать APK ${ver}` : "скачать APK";
 }
 
 const reveal = document.querySelectorAll(".section, .plan");
